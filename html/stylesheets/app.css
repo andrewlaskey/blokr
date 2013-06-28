@@ -1,0 +1,77 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.blocks {
+  position: absolute;
+  top: 150px;
+  left: 150px;
+  list-style: none;
+  width: 300px;
+  height: 300px;
+  overflow: hidden; }
+  .blocks li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate3d(0%, 0%, 0%);
+    -moz-transform: translate3d(0%, 0%, 0%);
+    -ms-transform: translate3d(0%, 0%, 0%);
+    -o-transform: translate3d(0%, 0%, 0%);
+    transform: translate3d(0%, 0%, 0%);
+    border: 1px solid #fff; }
+    .blocks li.red {
+      background-color: #e74c3c; }
+    .blocks li.blue {
+      background-color: #2980b9; }
+    .blocks li.green {
+      background-color: #27ae60; }
+    .blocks li.change {
+      display: none; }
+  .blocks.animate li {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+  .blocks[data-size="2"] li {
+    width: 50%;
+    height: 50%; }
+    .blocks[data-size="2"] li[data-row="1"] {
+      top: 0; }
+    .blocks[data-size="2"] li[data-row="2"] {
+      top: 50%; }
+    .blocks[data-size="2"] li[data-col="1"] {
+      left: 0; }
+    .blocks[data-size="2"] li[data-col="2"] {
+      left: 50%; }
+    .blocks[data-size="2"] li[data-row="0"] {
+      top: -50%; }
+    .blocks[data-size="2"] li[data-row="3"] {
+      top: 100%; }
+    .blocks[data-size="2"] li[data-col="0"] {
+      left: -50%; }
+    .blocks[data-size="2"] li[data-col="3"] {
+      left: 100%; }
+  .blocks[data-size="3"] li {
+    width: 33.3333%;
+    height: 33.3333%; }
+    .blocks[data-size="3"] li[data-row="1"] {
+      top: 0; }
+    .blocks[data-size="3"] li[data-row="2"] {
+      top: 33.3333%; }
+    .blocks[data-size="3"] li[data-row="3"] {
+      top: 66.6666%; }
+    .blocks[data-size="3"] li[data-col="1"] {
+      left: 0; }
+    .blocks[data-size="3"] li[data-col="2"] {
+      left: 33.3333%; }
+    .blocks[data-size="3"] li[data-col="3"] {
+      left: 66.6666%; }
+    .blocks[data-size="3"] li[data-row="0"] {
+      top: -33.3333%; }
+    .blocks[data-size="3"] li[data-row="4"] {
+      top: 100%; }
+    .blocks[data-size="3"] li[data-col="0"] {
+      left: -33.3333%; }
+    .blocks[data-size="3"] li[data-col="4"] {
+      left: 100%; }

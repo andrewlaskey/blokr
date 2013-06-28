@@ -1,0 +1,137 @@
+$size: 300px;
+
+.blocks {
+    position: absolute;
+    top: $size/2;
+    left: $size/2;
+    list-style: none;
+    width: $size;
+    height: $size;
+    overflow: hidden;
+
+
+    li {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include transform(translate3d(0%,0%,0%));
+        //-webkit-backface-visibility: hidden;
+        //-webkit-transform-style: preserve-3d;
+        border: 1px solid #fff;
+
+        &.red {
+            background-color: #e74c3c;
+        }
+
+        &.blue {
+            background-color: #2980b9;
+        }
+
+        &.green {
+            background-color: #27ae60;
+        }
+
+        &.outside {
+            //opacity: 0.7;
+        }
+
+        &.change {
+            display: none;
+        }
+    }
+
+    &.animate {
+
+        li {
+            @include transition(all 0.2s ease-in-out);
+        }
+    }
+
+    &[data-size="2"] {
+
+        li {
+            width: 50%;
+            height: 50%;
+
+            &[data-row="1"] {
+                top: 0;
+            }
+
+            &[data-row="2"] {
+                top: 50%;
+            }
+
+            &[data-col="1"] {
+                left: 0;
+            }
+
+            &[data-col="2"] {
+                left: 50%;
+            }
+
+            &[data-row="0"] {
+                top: -50%;
+            }
+
+            &[data-row="3"] {
+                top: 100%;
+            }
+
+            &[data-col="0"] {
+                left: -50%;
+            }
+
+            &[data-col="3"] {
+                left: 100%;
+            }
+        }
+    }
+
+    &[data-size="3"] {
+
+        li {
+            width: 33.3333%;
+            height: 33.3333%;
+
+            &[data-row="1"] {
+                top: 0;
+            }
+
+            &[data-row="2"] {
+                top: 33.3333%;
+            }
+
+            &[data-row="3"] {
+                top: 66.6666%;
+            }
+
+            &[data-col="1"] {
+                left: 0;
+            }
+
+            &[data-col="2"] {
+                left: 33.3333%;
+            }
+
+            &[data-col="3"] {
+                left: 66.6666%;
+            }
+
+            &[data-row="0"] {
+                top: -33.3333%;
+            }
+
+            &[data-row="4"] {
+                top: 100%;
+            }
+
+            &[data-col="0"] {
+                left: -33.3333%;
+            }
+
+            &[data-col="4"] {
+                left: 100%;
+            }
+        }
+    }
+}
