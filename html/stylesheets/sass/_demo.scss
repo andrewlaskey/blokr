@@ -1,0 +1,17 @@
+.panel {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+
+     &.red {
+        background-color: #e74c3c;
+    }
+
+    &.blue {
+        background-color: #2980b9;
+    }
+
+    &.green {
+        background-color: #27ae60;
+    }
+}
