@@ -23,7 +23,8 @@
 
     // Default options for the plugin as a simple object
     var defaults = {
-        js_sizing: true
+        js_sizing: true,
+        stop_img_drag: true
     };
 
     // Plugin constructor
@@ -80,6 +81,11 @@
                             function(ev) {
                                 self.handleHammer(this, ev, self);
                             });
+
+                if (this.opts.stop_img_drag) {
+                    //trick - stop the browser from dragging images
+                    this.$blocks.find('img').on('dragstart', function(event) { event.preventDefault(); });
+                }
 
             }
            
@@ -376,6 +382,12 @@
 
             self.$element.children('[data-row=' + row + '][data-col=0]').html(data);
         });
+
+        //stop all newly created images from dragging
+        if (self.opts.stop_img_drag) {
+            //trick - stop the browser from dragging images
+            self.$blocks.find('img').on('dragstart', function(event) { event.preventDefault(); });
+        }
     }
 
 

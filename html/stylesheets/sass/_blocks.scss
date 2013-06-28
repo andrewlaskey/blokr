@@ -1,4 +1,4 @@
-$size: 300px;
+$size: 600px;
 
 .blocks {
     position: relative;
@@ -16,6 +16,7 @@ $size: 300px;
         @include transform(translate3d(0%,0%,0%));
         -webkit-backface-visibility: hidden;
         -webkit-transform-style: preserve-3d;
+        overflow: hidden;
 
         &.change {
             display: none;
