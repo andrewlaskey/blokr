@@ -9,11 +9,7 @@
  * License: 
  */
 
-// Plugin closure wrapper
-// Uses dollar, but calls jQuery to prevent conflicts with other libraries
-// Semicolon to prevent breakage with concatenation
-// Pass in window as local variable for efficiency (could do same for document)
-// Pass in undefined to prevent mutation in ES3
+
 ;(function($, document, window, undefined) {
     // Optional, but considered best practice by some
     "use strict";
@@ -23,12 +19,10 @@
 
     // Default options for the plugin as a simple object
     var defaults = {
-        js_sizing: true,
-        stop_img_drag: true
+        js_sizing: true
     };
 
     // Plugin constructor
-    // This is the boilerplate to set up the plugin to keep our actual logic in one place
     function Plugin(element, options) {
         this.element = element;
         this.$element = $(this.element);
@@ -38,18 +32,10 @@
         this._defaults = defaults;
         this._name = pluginName;
 
-        // Initialization code to get the ball rolling
-        // If your plugin is simple, this may not be necessary and
-        // you could place your implementation here
         this.init();
     }
 
     Plugin.prototype = {
-        // Public functions accessible to users
-        // Prototype methods are shared across all elements
-        // You have access to this.options and this.element
-        // If your plugin is complex, you can split functionality into more
-        // methods like this one
 
         init: function() {
             var self = this;
@@ -81,11 +67,6 @@
                             function(ev) {
                                 self.handleHammer(this, ev, self);
                             });
-
-                if (this.opts.stop_img_drag) {
-                    //trick - stop the browser from dragging images
-                    this.$blocks.find('img').on('dragstart', function(event) { event.preventDefault(); });
-                }
 
             }
            
@@ -382,12 +363,6 @@
 
             self.$element.children('[data-row=' + row + '][data-col=0]').html(data);
         });
-
-        //stop all newly created images from dragging
-        if (self.opts.stop_img_drag) {
-            //trick - stop the browser from dragging images
-            self.$blocks.find('img').on('dragstart', function(event) { event.preventDefault(); });
-        }
     }
 
 
