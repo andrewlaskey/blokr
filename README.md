@@ -9,7 +9,7 @@ Blokr.js is a jQuery plugin that creates a square grid from a list of items. Use
 
 ##Setting up
 
-Include [hammer.js](https://github.com/EightMedia/hammer.js/) and Blokr's javascript and css.
+Include [hammer.js](https://github.com/EightMedia/hammer.js/)(this makes blokr work on touch devices) and Blokr's javascript and css.
 
 	<link rel="stylesheet" href="stylesheets/blokr.css" type="text/css">
 
