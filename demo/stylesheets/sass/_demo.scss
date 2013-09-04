@@ -7,16 +7,26 @@ body {
     height: 100%;
     border: 1px solid #fff;
 
+    padding-top: 0.5em;
+    text-align: center;
+    font-size: 4em;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #fff;
+
      &.red {
         background-color: #e74c3c;
     }
 
     &.blue {
-        background-color: #2980b9;
+        background-color: #3498db;
     }
 
     &.green {
-        background-color: #27ae60;
+        background-color: #2ecc71;
+    }
+
+    &.orange {
+        background-color: #e67e22;
     }
 }
 
