@@ -20,7 +20,12 @@ body {
     }
 }
 
+$size: 600px;
+
 .blocks {
+    margin: 100px auto;
+    height: $size;
+    width: $size;
 
     li {
         img {
